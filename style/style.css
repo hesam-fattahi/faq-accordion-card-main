@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, hsl(273deg, 75%, 66%), hsl(240deg, 73%, 65%));
+  color: hsl(238deg, 29%, 16%);
+  display: grid;
+  place-items: center;
+  padding: 1.8rem;
+}
+
+.main {
+  max-width: 92rem;
+  border-radius: 1.8rem;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  box-shadow: 0 0.5rem 2rem rgba(29, 30, 53, 0.25);
+  position: relative;
+}
+.main::before {
+  content: url(../images/illustration-box-desktop.svg);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -25%);
+  z-index: 2;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.illustration {
+  height: 100%;
+  position: relative;
+  left: -6.4rem;
+  background: url(../images/bg-pattern-desktop.svg) 100% 65% no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.acc {
+  padding: 6.4rem 8.4rem 6.4rem 2.4rem;
+}
+.acc h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.acc__list {
+  list-style: none;
+}
+.acc__item {
+  border-bottom: 1px solid hsl(240deg, 5%, 91%);
+}
+.acc__label {
+  display: grid;
+  grid-template-columns: 1fr -webkit-min-content;
+  grid-template-columns: 1fr min-content;
+  align-items: center;
+  -moz-column-gap: 1.8rem;
+       column-gap: 1.8rem;
+  cursor: pointer;
+}
+.acc__label:active .acc__question {
+  color: hsl(14deg, 88%, 65%);
+}
+.acc__question {
+  flex: 1;
+  color: hsl(238deg, 29%, 16%);
+  font-size: 1.4rem;
+  padding: 1.8rem 0;
+  transition: 0.3s ease-out;
+}
+.acc__icon {
+  transition: 0.3s ease-out;
+}
+.acc__answer {
+  display: none;
+  grid-column: 1/-1;
+  padding: 0 0 1.6rem;
+  color: hsl(240deg, 6%, 50%);
+}
+.acc__radio {
+  display: none;
+}
+.acc__radio:checked ~ label .acc__question {
+  font-weight: 700;
+}
+.acc__radio:checked ~ label .acc__answer {
+  display: block;
+}
+.acc__radio:checked ~ label .acc__icon {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 55.5em) {
+  .main {
+    max-width: 54rem;
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .main::before {
+    display: none;
+  }
+  .acc {
+    padding: 3.6rem 2.4rem;
+  }
+  .acc h1 {
+    text-align: center;
+  }
+  .overflow {
+    overflow: visible;
+  }
+  .illustration {
+    max-width: 24rem;
+    height: 5rem;
+    margin: 0 auto;
+    left: 0;
+    top: -4.5rem;
+    background: none;
+  }
+  .illustration::before {
+    content: url(../images/bg-pattern-mobile.svg);
+    position: absolute;
+    top: 4rem;
+  }
+}/*# sourceMappingURL=style.css.map */
